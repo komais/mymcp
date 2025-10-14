@@ -14,6 +14,11 @@ async def main():
             print("Connected successfully!")
             result = await client.call_tool("greet", {"name": "Ford"})
             print(f"Tool call result: {result}")
+            
+            # 调用 add 工具
+            add_result = await client.call_tool("add", {"a": 5, "b": 3})
+            print(f"Add tool result: {add_result}")
+            
     except Exception as e:
         print(f"Error: {e}")
 
